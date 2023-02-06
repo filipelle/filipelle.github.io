@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
+	<meta charset="UTF-8">
+	<link rel="" href="main.js">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles.css">
+	<title>Digitalize Now</title>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+	<header>
+
+		
+		<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="company logo" class="logo">
+			</a>
+			<button id="nav-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active">Contattaci <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link " href="">Servizi</a>
+					<a class="nav-item nav-link " href="#">Chi siamo</a>
+				</div>
+			</div>
+		</nav>
+		<div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px;">
+			<h1 style="width: 80%;" class="caption">Vuoi restare al passo coi tempi? Noi ti possiamo aiutare.</h1>
+			<a class="btn btn-secondary rounded-0" href="tel:+393312055299" style="width: 150px; ">Chiama ora</a>
+
+		</div>
+	</header>
+
+	<div style="
+	 width:80%;margin-inline: auto;">
+		<div class="d-flex flex-wrap">
+			<div class="my-card">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="200px">
+				<h3 style="text-align: center;" class="m-0">Filippo Pellegrini</h3>
+				<h5 style="text-align: center;">Software developer</h5>
+			</div>
+
+			<div class="my-card">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="200px">
+				<h3 style="text-align: center;" class="m-0">Gianmarco Gubbioni</h3>
+				<h5 style="text-align: center;">Media</h5>
+			</div>
+
+			<div class="my-card">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="200px">
+				<h3 style="text-align: center;" class="m-0">Nicolò Ricci</h3>
+				<h5 style="text-align: center;">Marketing </h5>
+			</div>
+		</div>
+		<p style="font-size: 1.2rem;margin: 0;">
+
+			Affidati alla nostra esperienza come sviluppatori, social media manager e marketing experts.
+			<br>
+			Attraverso lo sviluppo di siti web ed e-commerce, social media, scrittura digitale, campagne pubblicitarie, SEO e creazione di contenuti
+			creeremo un piano su misura <span class="highlight">per te ed il tuo business.</span>
+			Niente salti di fede, le nostre strategie sono basate sui <span class="highlight"> dati</span>!
+			<br><br>
+
+		</p>
+		<p class="highlight" style="text-align: center; width: 100%;font-size: 2rem;">"Hope is not a strategy”</p>
+		<br>
+		<p style="font-size: 1.3rem;">
+			La speranza non è una strategia, aspettare che un azienda cresca da se invece di affidarsi ad una <span class="highlight">strategia vincente</span>
+			è follia!
+
+			<br><br>
+			Chi fa da se fa per tre, ma...
+			Non puoi pensare di crescere online senza <span class="highlight">uno studio dettagliato</span>,
+			e un piano di marketing.
+			Affidandoti a noi non verrà lasciato nulla al caso!
+
+			Il marketing migliore è quello che non sembra marketing.
+
+			Qualsiasi sia la tua professione, la pubblicità è il mezzo con cui farlo crescere!,
+			Crea grazie a noi, una rete di nuovi clienti attraverso strategie digitali!
+		</p>
+		<p class="highlight" style="text-align: center; width: 100%;font-size: 2rem;">Fai in modo che il tuo cliente <br> sia l’eroe della tua storia.</p>
+
+	</div>
+	<div class="sticker">
+		<a href="facebook.com"><img src="images/facebook.png" alt="facebook" width="50px"></a>
+		<a href="instagram.com"><img src="images/Instagram.png" alt="instagram" width="50px"></a>
+		<a href="mailto:"><img src="images/Gmail_Icon.png" alt="mail" width="50px"></a>
+	</div>
+
+
+	<script>
+		window.onload = () => {
+			var toggler = document.getElementById("nav-toggler");
+			var el = document.getElementById("navbarNavAltMarkup");
+			var navbar = document.getElementById("navbar");
+			if (document.body.clientWidth < 450) {
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show")
+				toggler.style.display = "none";
+				navbar.classList.add("justify-content-center");
+			}
+		}
+		window.onresize = (e) => {
+			var toggler = document.getElementById("nav-toggler");
+			var el = document.getElementById("navbarNavAltMarkup");
+
+			if (document.body.clientWidth < 450) {
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show");
+				toggler.style.display = "none";
+				navbar.classList.add("justify-content-center");
+			} else if (document.body.clientWidth < (992 - 17) && document.body.clientWidth > 265) {
+				navbar.classList.remove("justify-content-center");
+				toggler.style.display = "inline-block";
+			} else {
+				toggler.style.display = "none";
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show");
+				navbar.classList.remove("justify-content-center");
+			}
+		}
+	</script>
+</body>

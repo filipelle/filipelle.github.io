@@ -5,18 +5,19 @@
 // $danger: $red !default;
 // $light: $gray-100 !default;
 // $dark: $gray-800 !default;
-@font-face {
-       font-family: "Glyphicons Halflings";
-       src: url("fonts/glyphicons-halflings-regular.ttf");
-}
 
-$theme-colors: (
-       "primary": #02AED6,
-       "danger": #ff4136
-);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+$primary: #02AED6;
+$secondary: #ff4136;
+$spacer: 100px;
+$body-bg: #02AED6;
+$danger: #ff4136;
+$body-color: white;
+@import "bootstrap-4.0.0/scss/bootstrap.scss";
 
 * {
-       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
        scroll-behavior: smooth;
        text-decoration: none;
 
@@ -37,6 +38,11 @@ $theme-colors: (
        }
 }
 
+label {
+       margin-top: 10px;
+       margin: 0;
+}
+
 body,
 html {
        width: 100%;
@@ -46,11 +52,26 @@ html {
        font-size: 100%;
 }
 
+.sticker {
+       text-orientation: upright;
+       writing-mode: vertical-rl;
+       justify-items: center;
+       padding: 5px;
+       gap: 5px;
+       grid-template-columns: 50px 50px 50px;
+       position: fixed;
+       z-index: 2;
+       background-color: rgb(118, 175, 33);
+       top: 30%;
+       display: grid;
+
+}
+
 .bg-absolute {
        position: absolute;
        width: 100%;
        min-width: 600px;
-       max-height: 800px;
+       height: 750px;
        object-fit: cover;
        z-index: -1;
        filter: brightness(0.7);
@@ -60,12 +81,38 @@ html {
        width: 100%;
 }
 
-.navbar-brand {
-       max-width: 280px;
-       width: 60%;
-       min-width: 160px;
+.caption {
+       color: var(--light);
+       font-size: 3rem;
 }
 
+.my-card {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       flex: 1;
+}
+
+.rounded-img {
+       aspect-ratio: 1 / 1;
+       object-fit: cover;
+       border-radius: 100%;
+       overflow: hidden;
+}
+
+.highlight {
+       font-weight: bold;
+       color: #ff4136;
+
+}
+
+.service {
+       flex: 1;
+       object-fit: cover;
+       background-repeat: no-repeat;
+}
+
+////////////////BOOTSTRAP
 @media (min-width: 992px) {
        .navbar-expand-lg {
               justify-content: space-between !important;
@@ -78,11 +125,12 @@ html {
 
 }
 
-.caption {
-       color: var(--light);
-       font-size: 3rem;
+.navbar {
+       padding: 0 !important;
 }
-
+.navbar-toggler{
+       margin-right:10px ;
+}
 @media (max-width: 991px) {
 
        .navbar-collapse {
@@ -91,18 +139,20 @@ html {
               font-size: 1.4rem !important;
               position: absolute;
               top: 90%;
-              left:0;
+              left: 0;
        }
-              .navbar-collapse.collapsing {
-                     width: 100%;
-                     flex-grow: 0 !important;
-                     font-size: 1.4rem !important;
-                     position: absolute;
-                     top: 90%;
-                     left: 0;
-              }
+
+       .navbar-collapse.collapsing {
+              width: 100%;
+              flex-grow: 0 !important;
+              font-size: 1.4rem !important;
+              position: absolute;
+              top: 90%;
+              left: 0;
+       }
 
        .navbar-nav {
+              column-gap: 10px;
               flex-direction: row !important;
               justify-content: space-evenly;
               flex-wrap: wrap;
@@ -119,6 +169,13 @@ html {
 
 }
 
+.navbar-brand {
+       max-width: 280px;
+       width: 60%;
+       min-width: 160px;
+       margin: 0 !important;
+}
+
 .nav-item.nav-link {
        color: white !important;
 
@@ -126,5 +183,3 @@ html {
               color: rgba(255, 255, 255, 0.527) !important;
        }
 }
-
-@import "bootstrap-4.0.0/scss/bootstrap.scss";

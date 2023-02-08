@@ -7701,6 +7701,42 @@ html {
   font-size: 100%;
 }
 
+.noi-img {
+  position: relative;
+  padding-block: 30px;
+  padding-inline: 50px;
+  width: 80%;
+  height: 700px;
+  margin-inline: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./images/us.jpg");
+}
+
+.description {
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.747);
+  font-size: 0;
+  transition: size 1s ease-in;
+}
+
+.description:hover {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
 .contact-form {
   padding-block: 30px;
   padding-inline: 50px;
@@ -7726,17 +7762,22 @@ html {
   display: grid;
 }
 
+#plus {
+  background-color: #02AED6;
+  box-shadow: 0 950px 0 1000px #02AED6;
+}
+
 .bg-absolute {
   top: 0px;
   left: 0px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   min-width: 600px;
   height: 750px;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
-  filter: brightness(0.7);
+  filter: brightness(0.5);
 }
 
 .logo {
@@ -7752,7 +7793,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  flex: 1 0 calc(33% - 10px);
   min-width: 300px;
 }
 
@@ -7776,6 +7817,14 @@ html {
   background-repeat: no-repeat;
 }
 
+.check-list {
+  list-style: none;
+}
+
+.check-list li:before {
+  content: "✓";
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     justify-content: space-between !important;
@@ -7783,6 +7832,9 @@ html {
   .navbar-collapse {
     flex-grow: 0 !important;
     font-size: 1.4rem !important;
+  }
+  .profiles {
+    display: none !important;
   }
 }
 .navbar {
@@ -7799,6 +7851,9 @@ html {
   }
   .contact-form {
     width: 90% !important;
+  }
+  .noi-img {
+    display: none;
   }
   .navbar-collapse {
     width: 100%;
@@ -7847,6 +7902,7 @@ html {
 
 button,
 .btn {
+  font-size: 1.3rem;
   transition: transform 0.1s ease-in;
 }
 

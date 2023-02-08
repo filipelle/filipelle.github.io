@@ -28,29 +28,36 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="#">Contattaci <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link " href="">Servizi</a>
-					<a class="nav-item nav-link " href="#">Chi siamo</a>
+					<a class="nav-item nav-link active" href="">Contattaci <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link " href="chisiamo.html">Chi siamo</a>
 				</div>
 			</div>
 		</nav>
 		<div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px;">
-			<h1 class="caption">Contattaci e richiedi un consulto gratuito!</h1>
-			<a class="btn btn-primary rounded-0" href="tel:+393312055299" style="width: 150px; ">Chiama ora</a>
+			<h1 class="caption"><strong>Richiedi ora una consulenza gratuita!</strong></h1>
+			<h2>Siamo felici di rispondere alle tue domande.</h2>
+			<ul class="check-list" style="font-size: 1.3rem;">
+				<li>       Scopri come aumentare la visibilità.</li>
+				<li>       Ottieni informazioni sui prezzi</li>
+				<li>       Esplora i casi d’uso per il tuo business</li>
+			</ul>
+			<br>
+			<a class="btn btn-primary rounded-1" href="tel:+393312055299" style="width: 150px; font-size: 1.3rem;">Chiama ora</a>
 
 		</div>
 	</header>
 
-	<div  class="contact-form" style="min-width: 250px;">
-		<form action="test" style="display:grid" id="myForm">
-			<label for="nome">Nome:</label>
-			<input type="text" class="form-control" name="nome" required>
-			<label for="congome">Cognome:</label>
-			<input type="text" class="form-control" name="congome" required>
-			<label for="email">Email:</label>
-			<input type="email" class="form-control" name="email" required>
+	<div class="contact-form" style="min-width: 250px;">
+		<h2>Contatta il nostro team</h2>
+		<form action="test" style="display:grid; gap: 15px;" id="myForm">
+			<label for="nome">Nome*:</label>
+			<input type="text" style="margin-bottom: 15px;" class="form-control" name="nome" required>
+			<label for="congome">Cognome*:</label>
+			<input type="text" style="margin-bottom: 15px;" class="form-control" name="congome" required>
+			<label for="email">Email*:</label>
+			<input type="email" style="margin-bottom: 15px;" class="form-control" name="email" required>
 			<label for="motivo">Descrizione:</label>
-			<textarea name="motivo" class="form-control" id="motivo" cols="30" rows="5"></textarea>
+			<textarea name="motivo" style="margin-bottom: 15px;" class="form-control" id="motivo" cols="30" rows="5"></textarea>
 			<input type="submit" class="btn btn-primary" value="Contattaci ora" style="width: 150px; margin: auto; margin-top: 15px;">
 		</form>
 		<p id="outcome"></p>

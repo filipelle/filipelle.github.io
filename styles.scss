@@ -9,7 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 $primary: #02AED6;
-$secondary: #ff4136;
+$secondary: black;
 $spacer: 100px;
 $body-bg: #02AED6;
 $danger: #ff4136;
@@ -50,6 +50,16 @@ html {
        box-sizing: border-box;
        margin: 0;
        font-size: 100%;
+}
+
+.contact-form {
+       padding-block:30px;
+       padding-inline: 50px ;
+       width: 60%;
+       margin-inline: auto;
+       color: black;
+       background-color: white;
+       box-shadow: 0 0  5px 0 rgba(0, 0, 0, 0.425);
 }
 
 .sticker {
@@ -93,6 +103,7 @@ html {
        flex-direction: column;
        align-items: center;
        flex: 1;
+       min-width: 300px;
 }
 
 .rounded-img {
@@ -104,7 +115,7 @@ html {
 
 .highlight {
        font-weight: bold;
-       color: #ff4136;
+       color: $secondary;
 
 }
 
@@ -130,10 +141,18 @@ html {
 .navbar {
        padding: 0 !important;
 }
-.navbar-toggler{
-       margin-right:10px ;
+
+.navbar-toggler {
+       margin-right: 10px;
 }
+
 @media (max-width: 991px) {
+       .banner-main {
+              font-size: 1.3rem !important;
+       }
+              .contact-form{
+                     width: 90% !important;
+              }
 
        .navbar-collapse {
               width: 100%;
@@ -184,4 +203,15 @@ html {
        &:hover {
               color: rgba(255, 255, 255, 0.527) !important;
        }
+}
+
+button,
+.btn {
+       transition: transform 0.1s ease-in;
+}
+
+button:hover,
+.btn:hover {
+       transform: scale(1.2);
+
 }

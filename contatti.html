@@ -17,41 +17,7 @@
 <body style="background: white !important;">
 
 	<header>
-		<script>
-			window.onload = () => {
-				var toggler = document.getElementById("nav-toggler");
-				var el = document.getElementById("navbarNavAltMarkup");
-				var navbar = document.getElementById("navbar");
-				if (document.body.clientWidth < 450) {
-					toggler.classList.remove("collapsed");
-					toggler.ariaExpanded = true;
-					el.classList.add("show")
-					toggler.style.display = "none";
-					navbar.classList.add("justify-content-center");
-				}
-			}
-			window.onresize = (e) => {
-				var toggler = document.getElementById("nav-toggler");
-				var el = document.getElementById("navbarNavAltMarkup");
 
-				if (document.body.clientWidth < 450) {
-					toggler.classList.remove("collapsed");
-					toggler.ariaExpanded = true;
-					el.classList.add("show");
-					toggler.style.display = "none";
-					navbar.classList.add("justify-content-center");
-				} else if (document.body.clientWidth < (992 - 17) && document.body.clientWidth > 265) {
-					navbar.classList.remove("justify-content-center");
-					toggler.style.display = "inline-block";
-				} else {
-					toggler.style.display = "none";
-					toggler.classList.remove("collapsed");
-					toggler.ariaExpanded = true;
-					el.classList.add("show");
-					navbar.classList.remove("justify-content-center");
-				}
-			}
-		</script>
 		<div class="bg-absolute bg-primary"></div>
 		<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
 			<a class="navbar-brand" href="index.html">
@@ -75,7 +41,7 @@
 		</div>
 	</header>
 
-	<div style="margin-top: 200px; width:80%;margin-inline: auto;color:black;">
+	<div  class="contact-form" style="min-width: 250px;">
 		<form action="test" style="display:grid" id="myForm">
 			<label for="nome">Nome:</label>
 			<input type="text" class="form-control" name="nome" required>
@@ -84,7 +50,7 @@
 			<label for="email">Email:</label>
 			<input type="email" class="form-control" name="email" required>
 			<label for="motivo">Descrizione:</label>
-			<textarea name="motivo" class="form-control" id="motivo" cols="30" rows="10"></textarea>
+			<textarea name="motivo" class="form-control" id="motivo" cols="30" rows="5"></textarea>
 			<input type="submit" class="btn btn-primary" value="Contattaci ora" style="width: 150px; margin: auto; margin-top: 15px;">
 		</form>
 		<p id="outcome"></p>
@@ -96,6 +62,12 @@
 		<a href="mailto:"><img src="images/Gmail_Icon.png" alt="mail" width="50px"></a>
 
 	</div>
+
+	<br>
+	<br>
+
+	<br>
+
 	<script>
 		$('#myForm').submit(function(e) {
 			e.preventDefault();
@@ -113,6 +85,40 @@
 		});
 	</script>
 
-	
+	<script>
+		window.onload = () => {
+			var toggler = document.getElementById("nav-toggler");
+			var el = document.getElementById("navbarNavAltMarkup");
+			var navbar = document.getElementById("navbar");
+			if (document.body.clientWidth < 450) {
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show")
+				toggler.style.display = "none";
+				navbar.classList.add("justify-content-center");
+			}
+		}
+		window.onresize = (e) => {
+			var toggler = document.getElementById("nav-toggler");
+			var el = document.getElementById("navbarNavAltMarkup");
+
+			if (document.body.clientWidth < 450) {
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show");
+				toggler.style.display = "none";
+				navbar.classList.add("justify-content-center");
+			} else if (document.body.clientWidth < (992 - 17) && document.body.clientWidth > 265) {
+				navbar.classList.remove("justify-content-center");
+				toggler.style.display = "inline-block";
+			} else {
+				toggler.style.display = "none";
+				toggler.classList.remove("collapsed");
+				toggler.ariaExpanded = true;
+				el.classList.add("show");
+				navbar.classList.remove("justify-content-center");
+			}
+		}
+	</script>
 
 </body>

@@ -9,7 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 $primary: #02AED6;
-$secondary: black;
+$secondary: #252323;
 $spacer: 100px;
 $body-bg: #02AED6;
 $danger: #ff4136;
@@ -52,18 +52,23 @@ html {
        font-size: 100%;
 }
 
+.noi-container {
+       margin: auto;
+       width: 90%;
+       margin-top: 50px;
+       // background-color: $secondary;
+}
+
 .noi-img {
+       flex: 1;
        position: relative;
-       padding-block: 30px;
-       padding-inline: 50px;
-       width: 80%;
-       height: 700px;
+       height: 600px;
+       display: block;
        margin-inline: auto;
-       background-size: cover;
+       background-size: contain;
        background-repeat: no-repeat;
        background-position: center;
-
-       background-image: url("./images/us.jpg");
+       background-image: url("./images/us.png");
 }
 
 .description {
@@ -148,8 +153,8 @@ html {
        display: flex;
        flex-direction: column;
        align-items: center;
-       flex: 1 0 calc(33% - 10px);
-       min-width: 300px;
+       flex: 1 0 calc(33% - 20px);
+       min-width: 150px;
 }
 
 .rounded-img {
@@ -183,8 +188,12 @@ footer {
        padding-block: 50px;
 }
 
+
 ////////////////BOOTSTRAP
 @media (min-width: 992px) {
+       .navbar-nav {
+                     margin-right: 50px !important;
+              }
        .navbar-expand-lg {
               justify-content: space-between !important;
        }
@@ -196,6 +205,7 @@ footer {
 
        .profiles {
               display: none !important;
+              
        }
 }
 
@@ -209,7 +219,10 @@ footer {
 
 @media (max-width: 991px) {
 
-       
+.imagewcaption{
+       flex-direction: column !important;
+       gap: 20px;
+}
        .navbar-footer {
               width: 100% !important;
               display: flex !important;

@@ -30,9 +30,8 @@
   }
 }
 @media (min-width: 768px) {
-  @supports ((position: -webkit-sticky) or (position: sticky)) {
+  @supports (position: sticky) {
     .bd-navbar {
-      position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 1071;
@@ -225,8 +224,8 @@
 }
 @media (min-width: 992px) {
   .bd-content > ul,
-.bd-content > ol,
-.bd-content > p {
+  .bd-content > ol,
+  .bd-content > p {
     max-width: 80%;
   }
 }
@@ -280,9 +279,8 @@
   padding-bottom: 1.5rem;
   font-size: 0.875rem;
 }
-@supports ((position: -webkit-sticky) or (position: sticky)) {
+@supports (position: sticky) {
   .bd-toc {
-    position: -webkit-sticky;
     position: sticky;
     top: 4rem;
     height: calc(100vh - 4rem);
@@ -322,9 +320,8 @@
   .bd-sidebar {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
-  @supports ((position: -webkit-sticky) or (position: sticky)) {
+  @supports (position: sticky) {
     .bd-sidebar {
-      position: -webkit-sticky;
       position: sticky;
       top: 4rem;
       z-index: 1000;
@@ -345,7 +342,7 @@
   margin-left: -15px;
 }
 @media (min-width: 768px) {
-  @supports ((position: -webkit-sticky) or (position: sticky)) {
+  @supports (position: sticky) {
     .bd-links {
       max-height: calc(100vh - 9rem);
       overflow-y: auto;
@@ -699,7 +696,7 @@
 }
 @media (min-width: 576px) {
   .bd-example .fixed-top,
-.bd-example .sticky-top {
+  .bd-example .sticky-top {
     margin: -1.5rem -1.5rem 1rem;
   }
   .bd-example .fixed-bottom {
@@ -1443,7 +1440,6 @@
   content: "$ ";
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -1452,7 +1448,6 @@
   content: "PM> ";
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 

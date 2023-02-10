@@ -109,10 +109,20 @@ html {
        display: grid;
 
 }
-#plus{
-       background-color: $primary;
-       box-shadow: 0 950px 0 1000px $primary;
+
+.footer-container {
+       width: 90%;
+       margin-inline: auto;
+       height: 100%;
+
 }
+
+.main-banner {
+       background-color: $primary;
+       padding-block: 100px;
+}
+
+
 .bg-absolute {
        top: 0px;
        left: 0px;
@@ -122,7 +132,6 @@ html {
        height: 750px;
        object-fit: cover;
        z-index: -1;
-       
        filter: brightness(0.5);
 }
 
@@ -161,12 +170,17 @@ html {
        object-fit: cover;
        background-repeat: no-repeat;
 }
+
 .check-list {
        list-style: none;
 }
 
 .check-list li:before {
        content: '✓';
+}
+
+footer {
+       padding-block: 50px;
 }
 
 ////////////////BOOTSTRAP
@@ -179,7 +193,8 @@ html {
               flex-grow: 0 !important;
               font-size: 1.4rem !important;
        }
-       .profiles{
+
+       .profiles {
               display: none !important;
        }
 }
@@ -193,6 +208,19 @@ html {
 }
 
 @media (max-width: 991px) {
+
+       
+       .navbar-footer {
+              width: 100% !important;
+              display: flex !important;
+              justify-content: center !important;
+       }
+
+       .footer-container {
+              flex-direction: column !important;
+              height: auto;
+       }
+
        .banner-main {
               font-size: 1.3rem !important;
        }
@@ -233,6 +261,7 @@ html {
        .caption {
               text-align: center;
               font-size: 2rem;
+              margin-top: 100px;
        }
 
        .nav-link {

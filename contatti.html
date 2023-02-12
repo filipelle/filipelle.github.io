@@ -36,7 +36,7 @@
 		<div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px;">
 
 			<h1 class="caption"><strong>Richiedi ora una consulenza gratuita!</strong></h1>
-			<h2 style="text-align: center;">Siamo felici di rispondere alle tue domande.</h2>
+			<h2 style="text-align: center;" class="sub-caption">Siamo felici di rispondere alle tue domande.</h2>
 			<ul class="check-list" style="font-size: 1.3rem;">
 				<li> Scopri come aumentare la visibilità.</li>
 				<li> Ottieni informazioni sui prezzi</li>
@@ -59,9 +59,10 @@
 			<input type="email" style="margin-bottom: 15px;" class="form-control" name="email" required>
 			<label for="motivo">Descrizione:</label>
 			<textarea name="motivo" style="margin-bottom: 15px;" class="form-control" id="motivo" cols="30" rows="5"></textarea>
-			<div><input type="checkbox" name="privacy" id="privacy">
-				<label for="privacy">Accetto La Privacy Policy</label>
-				<a href="https://www.iubenda.com/privacy-policy/40327393" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
+			<div class="d-flex flex-column">
+				<div class="d-flex justify-content-center"><input type="checkbox" name="privacy" id="privacy">
+				<label style="margin-left: 5px;" for="privacy">Accetto La Privacy Policy</label></div>
+				<a style="width: 50px !important;margin: auto !important;" href="https://www.iubenda.com/privacy-policy/40327393" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
 				<script type="text/javascript">
 					(function(w, d) {
 						var loader = function() {
@@ -80,7 +81,7 @@
 					})(window, document);
 				</script>
 			</div>
-			<input type="submit" class="btn btn-primary" value="Contattaci ora" style="width: 250px; margin: auto; margin-top: 15px;">
+			<input type="submit" class="btn btn-primary" value="Contattaci ora">
 		</form>
 		<p id="outcome"></p>
 

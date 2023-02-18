@@ -50,7 +50,7 @@ app.post('/contattaci',  (req, res) => {
               from: body.email,  // sender address
               to: 'info.digitalizenow@gmail.com',   // list of receivers
               subject: 'Ciao, ' + body.nome+ " " + body.cognome + ' ti vuole contattare',
-              text: body.description
+              text: body.motivo
        };
        transporter.sendMail(mailData, function (err, info) {
               if (err){

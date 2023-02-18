@@ -53,8 +53,8 @@
 		<form action="test" style="display:grid; gap: 15px;" id="myForm">
 			<label for="nome">Nome*:</label>
 			<input type="text" style="margin-bottom: 15px;" class="form-control" name="nome" required>
-			<label for="congome">Cognome*:</label>
-			<input type="text" style="margin-bottom: 15px;" class="form-control" name="congome" required>
+			<label for="cognome">Cognome*:</label>
+			<input type="text" style="margin-bottom: 15px;" class="form-control" name="cognome" required>
 			<label for="email">Email*:</label>
 			<input type="email" style="margin-bottom: 15px;" class="form-control" name="email" required>
 			<label for="motivo">Descrizione:</label>
@@ -124,17 +124,13 @@
 	<script>
 		$('#myForm').submit(function(e) {
 			e.preventDefault();
-			$.ajax({
-				url: '/Car/Edit/17/',
-				type: 'post',
-				data: $('#myForm').serialize(),
-				success: function() {
-					document.getElementById("outcome").innerText = "YES";
-				},
-				error: function() {
-					document.getElementById("outcome").innerText = "NO";
-				}
-			});
+			console.log();
+			var post = $.post('/contattaci', { data: $('#myForm').serialize()});
+			 post.done(function( data ) {
+			 var content = $( data ).find( "#outcome" );
+			 $( "#outcome" ).empty().append( content );
+			 });
+		
 		});
 	</script>
 

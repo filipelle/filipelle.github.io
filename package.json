@@ -1,0 +1,27 @@
+{
+  "name": "digitalize-now",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run",
+    "devStart": "nodemon main.js localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipelle/filipelle.github.io.git"
+  },
+  "author": "Filippo Pellegrini",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/filipelle/filipelle.github.io/issues"
+  },
+  "homepage": "https://github.com/filipelle/filipelle.github.io#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20"
+  }
+}

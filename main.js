@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const cors = require('cors')
 var bodyParser = require('body-parser')
 const path = require('path');
@@ -68,4 +68,4 @@ app.post('/contattaci',  (req, res) => {
 // });
 
 
-server.listen(process.env.PORT || 4200, function () { });
+server.listen(port, function () { });

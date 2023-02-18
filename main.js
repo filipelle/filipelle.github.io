@@ -29,6 +29,9 @@ app.use(cors())
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public/scripts'));
 app.use(express.static(__dirname + '/public/images'));
+app.use(express.static(__dirname + '/public/bootstrap-4.0.0'));
+app.use(express.static(__dirname + '/public/bootstrap-4.0.0'));
+app.use(express.static(__dirname + '/public/bootstrap-4.0.0/bootstrap-4.0.0'));
 
 app.set("views", path.join(__dirname, "/public/views"));
 
@@ -37,7 +40,7 @@ app.set("views", path.join(__dirname, "/public/views"));
 app.use("/views", express.static(__dirname + "public/views"));
 
 app.get('/', (req, res) => {
-       res.sendfile("index.html");
+       res.sendFile("index.html");
 })
 
 app.post('/contattaci',  (req, res) => {

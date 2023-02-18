@@ -45,7 +45,6 @@ app.get('/', (req, res) => {
 
 app.post('/contattaci',  (req, res) => {
        var body = qs.parse(req.body.data)
-       console.log(body);
        const mailData = {
               from: body.email,  // sender address
               to: 'info.digitalizenow@gmail.com',   // list of receivers

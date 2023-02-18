@@ -7719,6 +7719,7 @@ html {
 }
 
 .contact-form {
+  position: relative;
   padding-block: 30px;
   padding-inline: 50px;
   width: 60%;
@@ -7821,6 +7822,29 @@ html {
 
 footer {
   padding-block: 50px;
+}
+
+#outcome {
+  text-align: center;
+  padding: 5px;
+}
+#outcome.success {
+  background-color: #28a745;
+  color: white;
+}
+#outcome.error {
+  background-color: #ff4136;
+  color: white;
+}
+
+.confetti {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media (min-width: 992px) {

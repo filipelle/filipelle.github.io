@@ -9,6 +9,8 @@
 	<script src="scripts/jquery.min.js"></script>
 	<script src="scripts/popper.min.js"></script>
 	<script src="bootstrap-4.0.0/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
 	<title>Digitalize Now</title>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -61,7 +63,8 @@
 			<textarea name="motivo" style="margin-bottom: 15px;" class="form-control" id="motivo" cols="30" rows="5"></textarea>
 			<div class="d-flex flex-column">
 				<div class="d-flex justify-content-center"><input type="checkbox" name="privacy" id="privacy">
-				<label style="margin-left: 5px;" for="privacy">Accetto La Privacy Policy</label></div>
+					<label style="margin-left: 5px;" for="privacy">Accetto La Privacy Policy</label>
+				</div>
 				<a style="width: 50px !important;margin: auto !important;" href="https://www.iubenda.com/privacy-policy/40327393" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
 				<script type="text/javascript">
 					(function(w, d) {
@@ -81,10 +84,10 @@
 					})(window, document);
 				</script>
 			</div>
-			<input type="submit" class="btn btn-primary" value="Contattaci ora">
+			<input id="form-submit" type="submit" class="btn btn-primary" value="Contattaci ora">
 		</form>
-		<p id="outcome"></p>
-
+		<p id="outcome" class="mt-1 "></p>
+		<canvas class="confetti" id="canvas"></canvas>
 	</div>
 	<br>
 	<br>
@@ -119,18 +122,33 @@
 			</div>
 		</div>
 	</footer>
-	
+
 
 	<script>
 		$('#myForm').submit(function(e) {
+			$('#form-submit').prop("disabled", true);
+			$('#form-submit').css("transform", "none")
+			$('#form-submit').css("cursor", "wait")
 			e.preventDefault();
-			console.log();
-			var post = $.post('/contattaci', { data: $('#myForm').serialize()});
-			 post.done(function( data ) {
-			 var content = $( data ).find( "#outcome" );
-			 $( "#outcome" ).empty().append( content );
-			 });
-		
+
+			var post = $.post('/contattaci', {
+				data: $('#myForm').serialize()
+			});
+			post.done(function(data) {
+					$("#outcome").empty().text("Grazie, verrai ricontattato il prima possibile");
+					$("#outcome").addClass("success");
+					initConfetti();
+					render();
+				})
+				.fail(() => {
+					$("#outcome").addClass("error")
+					$("#outcome").empty().text("Ops, qualcosa è andato storto, riprova tra qualche minuto");
+				}).always(() => {
+					$('#form-submit').prop("disabled", false);
+					$('#form-submit').css("transform", "scale(1.2)")
+					$('#form-submit').css("cursor", "pointer")
+				})
+
 		});
 	</script>
 
@@ -169,5 +187,139 @@
 			}
 		}
 	</script>
+	<script>
+		//-----------Var Inits--------------
+		canvas = document.getElementById("canvas");
+		ctx = canvas.getContext("2d");
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		cx = ctx.canvas.width / 2;
+		cy = ctx.canvas.height / 2;
 
+		let confetti = [];
+		const confettiCount = 300;
+		const gravity = 0.8;
+		const terminalVelocity = 5;
+		const drag = 0.070;
+		const colors = [{
+				front: 'red',
+				back: 'darkred'
+			},
+			{
+				front: 'green',
+				back: 'darkgreen'
+			},
+			{
+				front: 'blue',
+				back: 'darkblue'
+			},
+			{
+				front: 'yellow',
+				back: 'darkyellow'
+			},
+			{
+				front: 'orange',
+				back: 'darkorange'
+			},
+			{
+				front: 'pink',
+				back: 'darkpink'
+			},
+			{
+				front: 'purple',
+				back: 'darkpurple'
+			},
+			{
+				front: 'turquoise',
+				back: 'darkturquoise'
+			}
+		];
+
+
+		//-----------Functions--------------
+		resizeCanvas = () => {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			cx = ctx.canvas.width / 2;
+			cy = ctx.canvas.height / 2;
+		};
+
+		randomRange = (min, max) => Math.random() * (max - min) + min;
+
+		initConfetti = () => {
+			for (let i = 0; i < confettiCount; i++) {
+				confetti.push({
+					color: colors[Math.floor(randomRange(0, colors.length))],
+					dimensions: {
+						x: randomRange(10, 20),
+						y: randomRange(10, 30)
+					},
+					position: {
+						x: randomRange(0, canvas.width),
+						y: canvas.height - 1
+					},
+					rotation: randomRange(0, 2 * Math.PI),
+					scale: {
+						x: 1,
+						y: 1
+					},
+					velocity: {
+						x: randomRange(-25, 25),
+						y: randomRange(0, -50)
+					}
+				});
+			}
+		};
+		//---------Render----------- 
+		render = () => {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			confetti.forEach((confetto, index) => {
+				let width = confetto.dimensions.x * confetto.scale.x;
+				let height = confetto.dimensions.y * confetto.scale.y;
+
+				// Move canvas to position and rotate
+				ctx.translate(confetto.position.x, confetto.position.y);
+				ctx.rotate(confetto.rotation);
+
+				// Apply forces to velocity
+				confetto.velocity.x -= confetto.velocity.x * drag;
+				confetto.velocity.y = Math.min(confetto.velocity.y + gravity, terminalVelocity);
+				confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
+
+				// Set position
+				confetto.position.x += confetto.velocity.x;
+				confetto.position.y += confetto.velocity.y;
+
+				// Delete confetti when out of frame
+				if (confetto.position.y >= canvas.height) confetti.splice(index, 1);
+
+				// Loop confetto x position
+				if (confetto.position.x > canvas.width) confetto.position.x = 0;
+				if (confetto.position.x < 0)
+					confetto.position.x = canvas.width;
+				// Spin confetto by scaling y 
+				confetto.scale.y = Math.cos(confetto.position.y * 0.1);
+				ctx.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
+
+				// Draw confetti
+				ctx.fillRect(-width / 2, -height / 2, width, height);
+
+				// Reset transform matrix
+				ctx.setTransform(1, 0, 0, 1, 0, 0);
+			});
+
+			// Fire off another round of confetti
+			
+			window.requestAnimationFrame(render);
+		};
+		//---------Execution-------- 
+		
+		//----------Resize---------- 
+		window.addEventListener('resize', function() {
+			resizeCanvas();
+		});
+		
+		
+	</script>
 </body>

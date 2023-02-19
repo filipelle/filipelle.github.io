@@ -4,9 +4,10 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
 	<meta charset="UTF-8">
-	<link href="main.js">
-	<script src="jquery.min.js"></script>
-	<script src="popper.min.js"></script>
+	<link rel="" href="main.js">
+	<script src="https://kit.fontawesome.com/e440374dc0.js" crossorigin="anonymous"></script>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/popper.min.js"></script>
 	<script src="bootstrap-4.0.0/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
 	<title>Digitalize Now</title>
@@ -27,6 +28,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
+					<a class="nav-item nav-link " href="home">Home</a>
 					<a class="nav-item nav-link active" href="contatti">Contattaci </a>
 					<a class="nav-item nav-link " href="chisiamo">Chi siamo <span class="sr-only">(current)</span></a>
 				</div>
@@ -35,23 +37,23 @@
 
 	</header>
 	<div class="d-flex align-items-center noi-container">
-		<h1 style="width: 80%; text-align: center; flex: 1;" class="caption">
+		<h1 style="width: 80%; text-align: center; flex: 1;" class="title">
 			<strong>Vuoi restare al passo coi tempi?</strong>
 			<br>
-			<span style="font-size: 2rem;"> Noi ti possiamo aiutare.</span>
+			<span class="subtitle"> Noi ti possiamo aiutare.</span>
 		</h1>
 		<div class="noi-img " style="color:black; width: 50%;">
 			<div class="description" style="top: 50%;left: 20%;">
 				<strong>Filippo Pellegrini</strong>
-				<br><span>Software developer</span>
+				<br><span>Technical Lead</span>
 			</div>
 			<div class="description" style="top: 50%; left: 70%;">
 				<strong>Gianmarco Gubbioni</strong>
-				<br><span>Media manager</span>
+				<br><span>Social Media Strategist</span>
 			</div>
 			<div class="description" style="top: 60%;left: 45%;">
 				<strong>Nicolò ricci</strong>
-				<br><span>Marketing</span>
+				<br><span>Marketing Specialist</span>
 			</div>
 		</div>
 
@@ -61,26 +63,31 @@
 
 	<div style="width:70%; margin-inline: auto;">
 
-		<div class="d-flex flex-wrap profiles" style="gap:20px">
-			<div class="my-card">
-				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="150px">
-				<h5 style="text-align: center;" class="m-0">Filippo Pellegrini</h5>
-				<p style="text-align: center;">Software developer</p>
+		<div class="d-flex flex-wrap profiles justify-content-center" style="gap:40px">
+			<div class="profile-card slide-in">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img">
+				<div>
+					<h5 class="m-0 text-right font-weight-bold "> Filippo Pellegrini</h5>
+					<p class="text-right">Technical Lead</p>
+				</div>
 			</div>
 
-			<div class="my-card">
-				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="150px">
-				<h5 style="text-align: center;" class="m-0">Gianmarco Gubbioni</h5>
-				<p style="text-align: center;">Media</p>
+			<div class="profile-card slide-in" style="animation-delay: 0.3s;">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img">
+				<div>
+					<h5 class="m-0 text-right font-weight-bold"> Gianmarco Gubbioni</h5>
+					<p class="text-right">Social Media Strategist</p>
+				</div>
 			</div>
-
-			<div class="my-card">
-				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img" width="150px">
-				<h5 style="text-align: center;" class="m-0">Nicolò Ricci</h5>
-				<p style="text-align: center;">Marketing </p>
+			<div class="profile-card slide-in" style="animation-delay: 0.6s;">
+				<img src="images/personal.jpg" alt="immagine dell'impiegato" class="rounded-img">
+				<div>
+					<h5 class="m-0 text-right font-weight-bold"> Nicolò Ricci</h5>
+					<p class="text-right">Marketing Specialist</p>
+				</div>
 			</div>
 		</div>
-		<h1 style="text-align: center;">Vieni a conoscere il nostro team</h1>
+		<h1 class="text-center mt-2">Vieni a conoscere il nostro team</h1>
 		<div class="d-flex align-items-center imagewcaption flex-column" style="gap:30px">
 			<img src="images/social.jpg" alt="" width="500px">
 			<p style="font-size: 1.5rem;margin: 0;">
@@ -104,27 +111,26 @@
 		</p>
 	</div>
 	<div style="width:70%; margin-inline: auto;">
-	<div class="d-flex align-items-center imagewcaption" style="gap:30px">
+		<div class="d-flex flex-column align-items-center imagewcaption" style="gap:30px">
+			<h2 class="m-0 mt-1 font-weight-bold">L'importanza della pianificazione</h2>
+			<p style="font-size: 1.5rem;margin: 0;">
+				Chi fa da se fa per tre, ma...
+				Non puoi pensare di crescere online senza <span class="highlight">uno studio dettagliato</span>,
+				e un piano di marketing.
+				Affidandoti a noi non verrà lasciato nulla al caso!
 
-		<p style="font-size: 1.5rem;margin: 0;">
-			<strong>L'importanza della pianificazione</strong><br><br>
-			Chi fa da se fa per tre, ma...
-			Non puoi pensare di crescere online senza <span class="highlight">uno studio dettagliato</span>,
-			e un piano di marketing.
-			Affidandoti a noi non verrà lasciato nulla al caso!
+				Il marketing migliore è quello che non sembra marketing.
 
-			Il marketing migliore è quello che non sembra marketing.
+				Qualsiasi sia la tua professione, la pubblicità è il mezzo con cui farlo crescere!,
+				Crea grazie a noi, una rete di nuovi clienti attraverso strategie digitali!
+			</p>
+			<img src="images/social.jpg" alt="" width="500px">
+		</div>
+		<br><br>
+		<p class="highlight" style="text-align: center; width: 100%;font-size: 3rem;">Fai in modo che il cliente <br> sia l’eroe della tua storia.</p>
+		<button class="btn btn-secondary" href="contatti">Contattaci</button>
 
-			Qualsiasi sia la tua professione, la pubblicità è il mezzo con cui farlo crescere!,
-			Crea grazie a noi, una rete di nuovi clienti attraverso strategie digitali!
-		</p>
-		<img src="images/social.jpg" alt="" width="500px">
 	</div>
-	<br><br>
-	<p class="highlight" style="text-align: center; width: 100%;font-size: 3rem;">Fai in modo che il tuo cliente <br> sia l’eroe della tua storia.</p>
-	<button class="btn btn-secondary" href="contatti">Contattaci</button>
-
-</div>
 	<br>
 	<br>
 	<br>
@@ -147,7 +153,7 @@
 					</div>
 				</nav>
 				<br>
-				<div>
+				<div style="text-align: center;">
 					<a href="https://www.facebook.com/profile.php?id=100090074174309"><i class="fa-brands fa-facebook" style="font-size:1.5rem;"></i></a>
 					<a href="https://www.instagram.com/digitalizenow_/"><i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i></a>
 					<a href="https://www.linkedin.com/company/digitalizenows/"><i class="fa-brands fa-linkedin" style="font-size:1.5rem;"></i></i></a>

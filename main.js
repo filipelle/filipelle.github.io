@@ -31,8 +31,6 @@ app.use(express.static('public'));
 
 
 app.get('/home', (req, res) => {
-       console.log("dsf");
-       // res.send("index.html");
        res.sendFile(path.join(__dirname, '/public/index.html'));
 })
 

@@ -17,29 +17,33 @@
 
 <body style="background: white !important;">
 
-	<header>
+	<header >
 
-		<div class="bg-absolute bg-primary" style="filter: brightness(1);"></div>
-		<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+		<div class="bg-absolute bg-primary bg-long" style="filter: brightness(1); "></div>
+		<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: white; color: black !important; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);">
 			<a class="navbar-brand" href="home">
 				<img src="images/logo.png" alt="company logo" class="logo">
 			</a>
 			<button id="nav-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<i style="color: black; font-size: 2rem;" class="fa-solid fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link " href="home">Home</a>
-					<a class="nav-item nav-link active" href="">Contattaci <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link " href="chisiamo">Chi siamo</a>
+				<div class="navbar-nav" style="background-color: white;">
+					<a class="nav-item nav-link " href="home" style="color: black !important;">Home</a>
+					<a class="nav-item nav-link active" href="" style="color: black !important;">Contattaci <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link " href="chisiamo" style="color: black !important;">Chi siamo</a>
 				</div>
 			</div>
 		</nav>
-		<div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px;">
+	</header>
 
-			<h1 class="caption"><strong>Richiedi ora una consulenza gratuita!</strong></h1>
-			<h2 style="text-align: center;" class="sub-caption">Siamo felici di rispondere alle tue domande.</h2>
-			<ul class="check-list" style="font-size: 1.3rem;">
+
+	<div class="contact-container">
+		<div class="d-flex flex-column align-items-center justify-content-center mt-2" style="height: 500px;">
+
+			<h1 class="title text-center"><strong>Richiedi ora una consulenza gratuita!</strong></h1>
+			<h2 class="subtitle  text-center">Siamo felici di rispondere alle tue domande.</h2>
+			<ul class="check-list subsubtitle">
 				<li> Scopri come aumentare la visibilità.</li>
 				<li> Ottieni informazioni sui prezzi</li>
 				<li> Esplora i casi d’uso per il tuo business</li>
@@ -48,46 +52,46 @@
 
 
 		</div>
-	</header>
 
-	<div class="contact-form" style="min-width: 250px;">
-		<h2>Contatta il nostro team</h2>
-		<form action="test" style="display:grid; gap: 15px;" id="myForm">
-			<label for="nome">Nome*:</label>
-			<input type="text" style="margin-bottom: 15px;" class="form-control" name="nome" required>
-			<label for="cognome">Cognome*:</label>
-			<input type="text" style="margin-bottom: 15px;" class="form-control" name="cognome" required>
-			<label for="email">Email*:</label>
-			<input type="email" style="margin-bottom: 15px;" class="form-control" name="email" required>
-			<label for="motivo">Descrizione:</label>
-			<textarea name="motivo" style="margin-bottom: 15px;" class="form-control" id="motivo" cols="30" rows="5"></textarea>
-			<div class="d-flex flex-column">
-				<div class="d-flex justify-content-center"><input type="checkbox" name="privacy" id="privacy">
-					<label style="margin-left: 5px;" for="privacy">Accetto La Privacy Policy</label>
+		<div class="contact-form" style="min-width: 250px;">
+			<h3 class="text-center mt-1">Contatta il nostro team</h3>
+			<form action="test" style="display:grid; gap: 15px;" id="myForm">
+				<label for="nome">Nome*:</label>
+				<input type="text" style="margin-bottom: 15px;" class="form-control" name="nome" required>
+				<label for="cognome">Cognome*:</label>
+				<input type="text" style="margin-bottom: 15px;" class="form-control" name="cognome" required>
+				<label for="email">Email*:</label>
+				<input type="email" style="margin-bottom: 15px;" class="form-control" name="email" required>
+				<label for="motivo">Descrizione:</label>
+				<textarea name="motivo" style="margin-bottom: 15px;" class="form-control" id="motivo" cols="30" rows="5"></textarea>
+				<div class="d-flex flex-column">
+					<div class="d-flex justify-content-center"><input type="checkbox" name="privacy" id="privacy">
+						<label style="margin-left: 5px;" for="privacy">Accetto La Privacy Policy</label>
+					</div>
+					<a style="width: 50px !important;margin: auto !important;" href="https://www.iubenda.com/privacy-policy/40327393" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
+					<script type="text/javascript">
+						(function(w, d) {
+							var loader = function() {
+								var s = d.createElement("script"),
+									tag = d.getElementsByTagName("script")[0];
+								s.src = "https://cdn.iubenda.com/iubenda.js";
+								tag.parentNode.insertBefore(s, tag);
+							};
+							if (w.addEventListener) {
+								w.addEventListener("load", loader, false);
+							} else if (w.attachEvent) {
+								w.attachEvent("onload", loader);
+							} else {
+								w.onload = loader;
+							}
+						})(window, document);
+					</script>
 				</div>
-				<a style="width: 50px !important;margin: auto !important;" href="https://www.iubenda.com/privacy-policy/40327393" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a>
-				<script type="text/javascript">
-					(function(w, d) {
-						var loader = function() {
-							var s = d.createElement("script"),
-								tag = d.getElementsByTagName("script")[0];
-							s.src = "https://cdn.iubenda.com/iubenda.js";
-							tag.parentNode.insertBefore(s, tag);
-						};
-						if (w.addEventListener) {
-							w.addEventListener("load", loader, false);
-						} else if (w.attachEvent) {
-							w.attachEvent("onload", loader);
-						} else {
-							w.onload = loader;
-						}
-					})(window, document);
-				</script>
-			</div>
-			<input id="form-submit" type="submit" class="btn btn-primary" value="Contattaci ora">
-		</form>
-		<p id="outcome" class="mt-1 "></p>
-		<canvas class="confetti" id="canvas"></canvas>
+				<input id="form-submit" type="submit" class="btn btn-primary" value="Contattaci ora">
+			</form>
+			<p id="outcome" class="mt-1 "></p>
+			<canvas class="confetti" id="canvas"></canvas>
+		</div>
 	</div>
 	<br>
 	<br>
@@ -310,16 +314,14 @@
 			});
 
 			// Fire off another round of confetti
-			
+
 			window.requestAnimationFrame(render);
 		};
 		//---------Execution-------- 
-		
+
 		//----------Resize---------- 
 		window.addEventListener('resize', function() {
 			resizeCanvas();
 		});
-		
-		
 	</script>
 </body>

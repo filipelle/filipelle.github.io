@@ -25,49 +25,43 @@ const transporter = nodemailer.createTransport({
        }
 });
 
-app.use(cors())
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/public/scripts'));
-app.use(express.static(__dirname + '/public/images'));
-app.use(express.static(__dirname + '/public/bootstrap-4.0.0'));
-app.use(express.static(__dirname + '/public/bootstrap-4.0.0'));
-app.use(express.static(__dirname + '/public/bootstrap-4.0.0/bootstrap-4.0.0'));
-
-app.set("views", path.join(__dirname, "/public/views"));
+app.use(cors());
+app.use(express.static('public'));
 
 
 
-app.use("/views", express.static(__dirname + "public/views"));
-
-app.get('/', (req, res) => {
-       res.sendFile("index.html");
+app.get('/home', (req, res) => {
+       console.log("dsf");
+       // res.send("index.html");
+       res.sendFile(path.join(__dirname, '/public/index.html'));
 })
 
-app.post('/contattaci',  (req, res) => {
+app.post('/contattaci', (req, res) => {
        var body = qs.parse(req.body.data)
        const mailData = {
               from: body.email,  // sender address
               to: 'info.digitalizenow@gmail.com',   // list of receivers
-              subject: 'Ciao, ' + body.nome+ " " + body.cognome + ' ti vuole contattare',
-              text: body.motivo
+              subject: 'Ciao, ' + body.nome + " " + body.cognome + ' ti vuole contattare',
+              text: body.motivo + " ricontattalo a : " + body.email
        };
        transporter.sendMail(mailData, function (err, info) {
-              if (err){
-                      res.sendStatus(500);
-             
-                     console.log(err)
+              if (err) {
+                     res.sendStatus(500);
               } else
-                  res.sendStatus(200);
+                     res.sendStatus(200);
        });
-       
-      
 })
 
+app.get('/contatti', (req, res) => {
+       res.sendFile(path.join(__dirname, '/public/contatti.html'));
+})
 
+app.get('/chisiamo', (req, res) => {
+       res.sendFile(path.join(__dirname, '/public/chisiamo.html'));
+})
 
-// app.get('*', function (req, res) {
-//        res.status(404).sendFile('404');
-// });
-
+app.get('*', (req, res) => {
+       res.sendFile(path.join(__dirname, '/public/404.html'));
+})
 
 server.listen(port, function () { });

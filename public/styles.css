@@ -7880,6 +7880,13 @@ footer {
 }
 
 @media (max-width: 991px) {
+  .light {
+    height: 400px !important;
+  }
+  .siren {
+    height: 400px !important;
+    background-size: 100px 100px !important;
+  }
   .title {
     font-size: 2rem;
     text-align: center;
@@ -7991,4 +7998,31 @@ button,
   margin-inline: auto;
   font-size: 1.2rem;
   transition: transform 0.1s ease-in;
+}
+
+.light {
+  -webkit-clip-path: polygon(0 20%, 50% 50%, 100% 20%, 100% 80%, 50% 50%, 0 79%);
+          clip-path: polygon(0 20%, 50% 50%, 100% 20%, 100% 80%, 50% 50%, 0 79%);
+  background-color: rgba(255, 0, 0, 0.342);
+  height: 200px;
+  animation: example 4s ease infinite;
+}
+
+.siren {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  background-image: url(images/siren.png);
+  background-position: center;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+
+@keyframes example {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
 }/*# sourceMappingURL=styles.css.map */

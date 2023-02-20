@@ -9,7 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 $primary: #02AED6;
-$secondary: #252323;
+$info: #9681fa;
+$secondary: #12229d;
 $spacer: 100px;
 $body-bg: rgb(2, 174, 214);
 $danger: #ff4136;
@@ -198,7 +199,7 @@ html {
 }
 
 .check-list li:before {
-       content: '✓';
+       content: '🠶';//'✓';
 }
 
 footer {
@@ -283,18 +284,24 @@ footer {
 
 ////////////////BOOTSTRAP
 @media (min-width: 992px) {
+
+       .banner-main {
+              width: 70% !important;
+              margin-inline: auto !important ;
+       }
+
        .contact-container {
-              .title {
-                     font-size: 2rem;
-              }
+              // .title {
+              //        font-size: 2rem;
+              // }
 
-              .subtitle {
-                     font-size: 1.5rem;
-              }
+              // .subtitle {
+              //        font-size: 1.5rem;
+              // }
 
-              .subsubtitle {
-                     font-size: 1.2rem;
-              }
+              // .subsubtitle {
+              //        font-size: 1.2rem;
+              // }
 
               justify-content: center;
               width: 90%;
@@ -433,6 +440,7 @@ footer {
               padding: 5px !important;
               width: 90% !important;
               margin-inline: auto;
+              margin-top: -50px;
        }
 
        .noi-img {
@@ -514,10 +522,10 @@ footer {
 button,
 .btn {
        display: block;
-       width: 150px;
        margin-inline: auto;
        font-size: 1.2rem;
        transition: transform 0.1s ease-in;
+      width: fit-content;
 }
 
 .light {

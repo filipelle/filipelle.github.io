@@ -17,7 +17,7 @@
 
 <body style="background: white !important;">
 
-	<header >
+	<header>
 
 		<div class="bg-absolute bg-primary bg-long" style="filter: brightness(1); "></div>
 		<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: white; color: black !important; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);">
@@ -44,12 +44,13 @@
 			<h1 class="title text-center"><strong>Richiedi ora una consulenza gratuita!</strong></h1>
 			<h2 class="subtitle  text-center">Siamo felici di rispondere alle tue domande.</h2>
 			<ul class="check-list subsubtitle">
+				<li> Ottieni una consulenza con il nostro team</li>
 				<li> Scopri come aumentare la visibilità.</li>
-				<li> Ottieni informazioni sui prezzi</li>
-				<li> Esplora i casi d’uso per il tuo business</li>
+				<li> Ricevi un piano su misura.</li>
 			</ul>
 			<br>
-
+			<a class="btn " style="background-color: white;color:var(--primary) ;" href="tel:3318349364">Chiama ora </a>
+	<a href="https://wa.me/message/2IZB4WJPOSRQG1" class="float" target="_blank">sdasds</a>
 
 		</div>
 
@@ -97,7 +98,7 @@
 	<br>
 	<br>
 	<br>
-	<footer style="background: white; color: black; ">
+	<footer style="background: white; color: black; position: relative;">
 		<div class="d-flex justify-content-between align-items-center footer-container">
 			<div style="display: grid;justify-items: center;">
 				<p>IL MARKETING PER TE</p>
@@ -115,15 +116,20 @@
 					</div>
 				</nav>
 				<br>
-				<div style="text-align: center;">
-					<a href="https://www.facebook.com/profile.php?id=100090074174309"><i class="fa-brands fa-facebook" style="font-size:1.5rem;"></i></a>
-					<a href="https://www.instagram.com/digitalizenow_/"><i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i></a>
-					<a href="https://www.linkedin.com/company/digitalizenows/"><i class="fa-brands fa-linkedin" style="font-size:1.5rem;"></i></i></a>
 
-					<a href="mailto:"><i class="fa-solid fa-envelope" style="font-size:1.5rem;"></i></a>
+				<div style="text-align: center; ">
+					<a href="https://www.facebook.com/profile.php?id=100090074174309" target="_blank"><i class="fa-brands fa-facebook" style="font-size:1.5rem;"></i></a>
+					<a href="https://www.instagram.com/digitalizenow_/" target="_blank"><i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i></a>
+					<a href="https://www.linkedin.com/company/digitalizenows/" target="_blank"><i class="fa-brands fa-linkedin" style="font-size:1.5rem;"></i></i></a>
+					<a href="mailto:info.digitalizenow@gmail.com"><i class="fa-solid fa-envelope" style="font-size:1.5rem;"></i></a>
 
 				</div>
 			</div>
+		</div>
+		<div class="text-center w-100 d-flex justify-content-center " style=" padding-block:3px ;font-size: 0.9rem;color:white; position: absolute;bottom: 0; gap: 15px;background-color: #252323;">
+			<a href="tel:3318349364">Tel: <strong>3318349364</strong> </a>
+			<a href="mailto:info.digitalizenow@gmail.com"><strong>info.digitalizenow@gmail.com</strong></a>
+
 		</div>
 	</footer>
 
@@ -149,7 +155,7 @@
 					$("#outcome").empty().text("Ops, qualcosa è andato storto, riprova tra qualche minuto");
 				}).always(() => {
 					$('#form-submit').prop("disabled", false);
-					$('#form-submit').css("transform", "scale(1.2)")
+					$('#form-submit').css("transform", "")
 					$('#form-submit').css("cursor", "pointer")
 				})
 

@@ -60,6 +60,21 @@ html {
        // background-color: $secondary;
 }
 
+.whatsapp {
+       &:hover{
+              text-decoration: none !important;
+       }
+       z-index: 5;
+       background-color: #25D366;
+       border-radius: 50%;
+       width: 50px;
+       height: 50px;
+       display: block;
+       position: fixed;
+       bottom: 10px;
+       right: 10px;
+}
+
 .noi-img {
        flex: 1;
        position: relative;
@@ -199,7 +214,7 @@ html {
 }
 
 .check-list li:before {
-       content: '🠶';//'✓';
+       content: '✓';
 }
 
 footer {
@@ -287,7 +302,7 @@ footer {
 
        .banner-main {
               width: 70% !important;
-              margin-inline: auto !important ;
+              margin-inline: auto !important;
        }
 
        .contact-container {
@@ -525,7 +540,7 @@ button,
        margin-inline: auto;
        font-size: 1.2rem;
        transition: transform 0.1s ease-in;
-      width: fit-content;
+       width: fit-content;
 }
 
 .light {

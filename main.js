@@ -58,8 +58,13 @@ app.get('/chisiamo', (req, res) => {
        res.sendFile(path.join(__dirname, '/public/chisiamo.html'));
 })
 
-app.get('*', (req, res) => {
+app.get('/sitemap.xml', (req, res) => {
        res.sendFile(path.join(__dirname, '/public/404.html'));
+})
+
+
+app.get('*', (req, res) => {
+       res.sendFile(path.join(__dirname, '/public/sitemap.xml'));
 })
 
 server.listen(port, function () { });

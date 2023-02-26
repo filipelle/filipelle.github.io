@@ -7665,6 +7665,13 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.text-punchline-center {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 50%;
+  margin-inline: auto;
+}
+
 label {
   margin-top: 10px;
   margin: 0;
@@ -7693,6 +7700,7 @@ html {
 }
 
 .whatsapp {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.271);
   z-index: 5;
   background-color: #25D366;
   border-radius: 50%;
@@ -7800,11 +7808,6 @@ html {
   width: 100%;
 }
 
-.caption {
-  color: var(--light);
-  font-size: 3rem;
-}
-
 .my-card {
   display: flex;
   flex-direction: column;
@@ -7834,6 +7837,7 @@ html {
 }
 
 .check-list {
+  container-type: inline-size;
   list-style: none;
   padding: 0;
   width: 90%;
@@ -7845,6 +7849,11 @@ html {
   margin: auto;
 }
 
+@container (max-width: 500px) {
+  .check-list li {
+    width: 100% !important;
+  }
+}
 .check-list li:before {
   content: "✓";
 }
@@ -7907,19 +7916,6 @@ footer {
   width: 100px;
 }
 
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-    margin-bottom: 0;
-  }
-}
 @media (min-width: 992px) {
   .banner-main {
     width: 70% !important;
@@ -7970,6 +7966,9 @@ footer {
 }
 
 @media (max-width: 991px) {
+  .text-punchline-center {
+    width: 80% !important;
+  }
   .flex-large-mobile {
     flex-direction: column;
     gap: 10px;
@@ -8064,23 +8063,8 @@ footer {
     flex-wrap: wrap;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);
   }
-  .caption {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  .sub-caption {
-    padding: auto;
-    text-align: center;
-    font-size: 1.2rem;
-  }
   .nav-link {
     padding: 0 !important;
-  }
-}
-@media (max-width: 240px) {
-  .caption {
-    margin-top: 150px;
   }
 }
 .navbar-brand {
@@ -8113,7 +8097,7 @@ button,
           clip-path: polygon(0 20%, 50% 50%, 100% 20%, 100% 80%, 50% 50%, 0 79%);
   background-color: rgba(255, 0, 0, 0.342);
   height: 200px;
-  animation: example 4s ease infinite;
+  animation: rotationY 4s ease infinite;
 }
 
 .siren {
@@ -8126,7 +8110,7 @@ button,
   background-repeat: no-repeat;
 }
 
-@keyframes example {
+@keyframes rotationY {
   0% {
     transform: rotateY(0);
   }
@@ -8142,9 +8126,6 @@ button,
 @keyframes slide-in {
   0% {
     opacity: 0;
-  }
-  70% {
-    opacity: 0.5;
   }
   100% {
     transform: translateX(0%);

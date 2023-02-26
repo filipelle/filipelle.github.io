@@ -59,12 +59,11 @@ app.get('/chisiamo', (req, res) => {
 })
 
 app.get('/sitemap.xml', (req, res) => {
-       res.sendFile(path.join(__dirname, '/public/404.html'));
+       res.sendFile(path.join(__dirname, '/public/sitemap.xml'));
 })
 
-
 app.get('*', (req, res) => {
-       res.sendFile(path.join(__dirname, '/public/sitemap.xml'));
+       res.sendFile(path.join(__dirname, '/public/404.html'));
 })
 
 server.listen(port, function () { });

@@ -39,6 +39,13 @@ $body-color: white;
        }
 }
 
+.text-punchline-center {
+       font-size: 1.5rem;
+       text-align: center;
+       width: 50%;
+       margin-inline: auto;
+}
+
 label {
        margin-top: 10px;
        margin: 0;
@@ -72,6 +79,7 @@ html {
               text-decoration: none !important;
        }
 
+       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.271);
        z-index: 5;
        background-color: #25D366;
        border-radius: 50%;
@@ -176,12 +184,6 @@ html {
        width: 100%;
 }
 
-.caption {
-       color: var(--light);
-       font-size: 3rem;
-}
-
-
 .my-card {
        display: flex;
        flex-direction: column;
@@ -200,7 +202,6 @@ html {
 .highlight {
        font-weight: bold;
        color: $secondary;
-
 }
 
 .service {
@@ -210,6 +211,7 @@ html {
 }
 
 .check-list {
+       container-type: inline-size;
        list-style: none;
        padding: 0;
        width: 90%;
@@ -218,6 +220,11 @@ html {
        li {
               width: fit-content;
               margin: auto;
+       }
+}
+@container (max-width: 500px) {
+       .check-list li {
+              width: 100% !important;
        }
 }
 
@@ -287,25 +294,6 @@ footer {
 
 }
 
-@keyframes slide-in {
-       0% {
-              opacity: 0;
-       }
-
-       70% {
-              opacity: 0.5;
-       }
-
-       100% {
-              transform: translateX(0%);
-              opacity: 1;
-              margin-bottom: 0;
-       }
-}
-
-
-
-////////////////BOOTSTRAP
 @media (min-width: 992px) {
 
        .banner-main {
@@ -314,27 +302,12 @@ footer {
        }
 
        .contact-container {
-              // .title {
-              //        font-size: 2rem;
-              // }
-
-              // .subtitle {
-              //        font-size: 1.5rem;
-              // }
-
-              // .subsubtitle {
-              //        font-size: 1.2rem;
-              // }
-
               justify-content: center;
               width: 90%;
               margin-inline: auto;
               gap: 100px;
               display: flex;
               margin-block: 100px;
-
-
-
        }
 
        .bg-long {
@@ -383,11 +356,15 @@ footer {
 
 
 @media (max-width: 991px) {
+       .text-punchline-center {
+              width: 80% !important;
+       }
 
        .flex-large-mobile {
-                     flex-direction: column;
-                     gap: 10px;
-              }
+              flex-direction: column;
+              gap: 10px;
+       }
+
        #motivo {
               height: 6rem !important;
        }
@@ -503,32 +480,12 @@ footer {
               box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);
        }
 
-       .caption {
-              text-align: center;
-              font-size: 1.5rem;
-              margin-bottom: 10px;
-       }
-
-       .sub-caption {
-              padding: auto;
-              text-align: center;
-              font-size: 1.2rem;
-       }
-
        .nav-link {
               padding: 0 !important;
        }
 
 }
 
-@media (max-width: 240px) {
-
-       .caption {
-              margin-top: 150px;
-
-       }
-
-}
 
 
 .navbar-brand {
@@ -557,17 +514,13 @@ button,
 }
 
 .light {
-
        clip-path: polygon(0 20%, 50% 50%, 100% 20%, 100% 80%, 50% 50%, 0 79%);
        background-color: rgba(255, 0, 0, 0.342);
        height: 200px;
-
-       animation: example 4s ease infinite;
-
+       animation: rotationY 4s ease infinite;
 }
 
 .siren {
-
        width: 80%;
        height: 200px;
        margin: auto;
@@ -575,10 +528,9 @@ button,
        background-position: center;
        background-size: 50px 50px;
        background-repeat: no-repeat;
-
 }
 
-@keyframes example {
+@keyframes rotationY {
        0% {
               transform: rotateY(0);
        }
@@ -599,10 +551,6 @@ button,
               opacity: 0;
        }
 
-       70% {
-              opacity: 0.5;
-       }
-
        100% {
               transform: translateX(0%);
               opacity: 1;
@@ -615,12 +563,9 @@ button,
               opacity: 0;
        }
 
-       70% {
-              opacity: 0.5;
-       }
-
        100% {
               -webkit-transform: translateX(0%);
               margin-bottom: 0;
+              opacity: 1;
        }
 }
